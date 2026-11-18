@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "replace-app-id",
+  "title": "Replace application title",
+  "summary": "Replace with the learning purpose.",
+  "entryPoint": "index.html",
+  "language": "sv",
+  "certification": "AWS Certified AI Practitioner",
+  "examCode": "AIF-C01",
+  "learningModes": [
+    "concept-exploration"
+  ],
+  "domains": [],
+  "status": "candidate",
+  "sharedAssetContract": 1
+}

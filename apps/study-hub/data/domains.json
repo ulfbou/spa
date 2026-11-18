@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "title": "Fundamentals of AI and ML",
+    "weight": 20,
+    "description": "Utforska grundläggande AI- och ML-begrepp, datakvalitet och modellutvärdering.",
+    "focus": [
+      "AI, ML och deep learning",
+      "supervised och unsupervised learning",
+      "träning och inferens",
+      "utvärderingsmetriker"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Fundamentals of Generative AI",
+    "weight": 24,
+    "description": "Undersök foundation models, tokens, embeddings, promptning och RAG.",
+    "focus": [
+      "foundation models",
+      "tokens och context windows",
+      "embeddings",
+      "prompt engineering",
+      "RAG"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Applications of Foundation Models",
+    "weight": 28,
+    "description": "Jämför hur foundation models används, anpassas, utvärderas och driftas på AWS.",
+    "focus": [
+      "Amazon Bedrock",
+      "modellval",
+      "Knowledge Bases",
+      "Agents",
+      "Guardrails"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Guidelines for Responsible AI",
+    "weight": 14,
+    "description": "Utforska fairness, explainability, transparency, safety och human oversight.",
+    "focus": [
+      "bias och fairness",
+      "explainability",
+      "transparency",
+      "human oversight"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Security, Compliance and Governance",
+    "weight": 14,
+    "description": "Förstå säkerhet, integritet, styrning och efterlevnad för AWS AI-lösningar.",
+    "focus": [
+      "IAM och least privilege",
+      "kryptering",
+      "data residency",
+      "audit och governance"
+    ]
+  }
+]

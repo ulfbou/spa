@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "applications": [
+    {
+      "id": "study-hub",
+      "order": 10,
+      "featured": true
+    }
+  ]
+}

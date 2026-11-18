@@ -424,3 +424,7 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+# AWS AI SPA generated artifacts
+dist/
+coverage/
+.DS_Store

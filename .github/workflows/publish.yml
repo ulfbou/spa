@@ -1,0 +1,90 @@
+name: Publish to ulfbou.github.io
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-ulfbou-github-io-aws-ai
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out SPA source
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate and build
+        working-directory: source
+        run: npm run check
+
+      - name: Require publication token
+        env:
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+        run: |
+          if [[ -z "$PUBLISH_TOKEN" ]]; then
+            printf '%s\n' \
+              'PUBLISH_TOKEN is required to publish to ulfbou/ulfbou.github.io.'
+            false
+          fi
+
+      - name: Check out website host
+        uses: actions/checkout@v4
+        with:
+          repository: ulfbou/ulfbou.github.io
+          token: ${{ secrets.PUBLISH_TOKEN }}
+          path: host
+
+      - name: Replace only aws/ai
+        run: |
+          rm -rf host/aws/ai
+          mkdir -p host/aws/ai
+          cp -R source/dist/aws/ai/. host/aws/ai/
+
+      - name: Verify publication boundary
+        working-directory: host
+        run: |
+          changed="$(
+            {
+              git diff --name-only
+              git ls-files --others --exclude-standard
+            } | sort -u
+          )"
+
+          if [[ -z "$changed" ]]; then
+            printf '%s\n' 'No publication changes were generated.'
+            false
+          fi
+
+          invalid="$(
+            printf '%s\n' "$changed" |
+              grep -vE '^aws/ai/' ||
+              true
+          )"
+
+          if [[ -n "$invalid" ]]; then
+            printf '%s\n' 'Publication attempted changes outside aws/ai/:'
+            printf '%s\n' "$invalid"
+            false
+          fi
+
+      - name: Commit and push publication
+        working-directory: host
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- aws/ai
+          git commit -m "Publish AWS AI learning applications"
+          git push

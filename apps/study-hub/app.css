@@ -1,0 +1,119 @@
+:root {
+  color-scheme: dark;
+  --study-bg: var(--aws-color-background, #0d1220);
+  --study-surface: var(--aws-color-surface, #161d2f);
+  --study-surface-strong: var(--aws-color-surface-strong, #1e2740);
+  --study-border: var(--aws-color-border, #2a3550);
+  --study-text: var(--aws-color-text, #e8edf7);
+  --study-muted: var(--aws-color-muted, #9fb0cc);
+  --study-accent: var(--aws-color-accent, #5b9dff);
+  --study-highlight: var(--aws-color-highlight, #ffc65c);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--study-bg);
+  color: var(--study-text);
+  font: 1rem/1.6 system-ui, "Segoe UI", sans-serif;
+}
+
+a {
+  color: var(--study-accent);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.75rem 1rem;
+  background: var(--study-text);
+  color: var(--study-bg);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.app-header,
+.app-shell {
+  width: min(70rem, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.app-header {
+  padding-block: 2rem 1rem;
+}
+
+.app-header h1 {
+  margin-block: 0;
+}
+
+.app-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.eyebrow {
+  color: var(--study-highlight);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.panel {
+  margin-block: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--study-border);
+  border-radius: 0.75rem;
+  background: var(--study-surface);
+}
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.domain-card {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 10rem;
+  padding: 1rem;
+  border: 1px solid var(--study-border);
+  border-radius: 0.75rem;
+  background: var(--study-surface-strong);
+  color: var(--study-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.domain-card:hover,
+.domain-card:focus-visible {
+  border-color: var(--study-accent);
+}
+
+.domain-card:focus-visible {
+  outline: 3px solid var(--study-accent);
+  outline-offset: 3px;
+}
+
+.domain-weight {
+  color: var(--study-highlight);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,33 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate, test, and build
+        run: npm run check
+
+      - name: Upload publication artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aws-ai-static-site
+          path: dist/aws/ai/
+          if-no-files-found: error

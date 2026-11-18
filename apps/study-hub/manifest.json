@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "study-hub",
+  "title": "AIF-C01 Study Hub",
+  "summary": "Interactive exploration of AWS AI Practitioner concepts, relationships, simulations, and service trade-offs.",
+  "entryPoint": "index.html",
+  "language": "sv",
+  "certification": "AWS Certified AI Practitioner",
+  "examCode": "AIF-C01",
+  "learningModes": [
+    "concept-exploration",
+    "simulation",
+    "retrieval-practice"
+  ],
+  "domains": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "status": "candidate",
+  "sharedAssetContract": 1
+}

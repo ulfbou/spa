@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Interaktivt lärande för AWS Certified AI Practitioner."
+  >
+  <title>AIF-C01 Study Hub</title>
+
+  <!-- Host-owned production assets. Failure to load them must not hide content. -->
+  <link rel="stylesheet" href="/css/aws/base.css">
+  <link rel="stylesheet" href="/css/aws/learning-app.css">
+
+  <link rel="stylesheet" href="./app.css">
+  <script src="/js/aws/runtime.js" defer></script>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Hoppa till innehållet</a>
+
+  <header class="app-header">
+    <p class="eyebrow">AWS Certified AI Practitioner · AIF-C01</p>
+    <h1>Study Hub</h1>
+    <p>
+      Utforska samband, tjänsteval och AI-koncept genom interaktiva
+      läraktiviteter.
+    </p>
+    <nav aria-label="Överordnad navigation">
+      <a href="/aws/ai/">Alla AI-appar</a>
+      <a href="/aws/">AWS</a>
+    </nav>
+  </header>
+
+  <main id="main-content" class="app-shell">
+    <noscript>
+      <section class="panel">
+        <h2>JavaScript krävs</h2>
+        <p>Den interaktiva lärmiljön behöver JavaScript för att fungera.</p>
+      </section>
+    </noscript>
+
+    <section class="panel" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Utforska certifieringsdomänerna</h2>
+      <p>
+        Detta är den publicerbara grundstrukturen. Den tidigare
+        <code>spa.html</code>-kandidaten kan nu anpassas modulvis utan att
+        återinföra en monolitisk HTML-fil.
+      </p>
+      <div id="domain-grid" class="domain-grid"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="selection-title">
+      <h2 id="selection-title">Vald domän</h2>
+      <div id="selection" aria-live="polite">
+        Välj en domän för att börja utforska.
+      </div>
+    </section>
+  </main>
+</body>
+</html>

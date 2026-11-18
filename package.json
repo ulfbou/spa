@@ -1,0 +1,18 @@
+{
+  "name": "@ulfbou/aws-ai-spas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static interactive learning applications for AWS Certified AI Practitioner.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "check": "npm run validate && npm run test && npm run build"
+  },
+  "license": "MIT"
+}
